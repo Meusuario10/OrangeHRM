@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0 (Python 3.10.8 on win32)" generated="20221118 11:48:07.298" rpa="false" schemaversion="3">
+<suite id="s1" name="SuiteAutomation" source="C:\Users\Larissa\Desktop\Automacao\4- suite\SuiteAutomation.robot">
+<test id="s1-t1" name="CT01-Login Com Sucesso" line="17">
+<kw name="Abrir navegador" library="FrameworkAutomation" type="SETUP">
+<arg>${URL}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${tela}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221118 11:48:15.450" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<status status="PASS" starttime="20221118 11:48:15.448" endtime="20221118 11:48:28.447"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221118 11:48:28.448" endtime="20221118 11:48:28.624"/>
+</kw>
+<kw name="Print Tela" library="FrameworkAutomation">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221118 11:48:28.933" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221118 11:48:28.627" endtime="20221118 11:48:28.934"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:28.625" endtime="20221118 11:48:28.934"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:15.445" endtime="20221118 11:48:28.935"/>
+</kw>
+<kw name="Dado que acesso o site OrangeHRM" library="StepsAutomation">
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:29.946" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:28.941" endtime="20221118 11:48:29.947"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:28.939" endtime="20221118 11:48:29.947"/>
+</kw>
+<kw name="Print Tela" library="FrameworkAutomation">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221118 11:48:30.543" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221118 11:48:29.950" endtime="20221118 11:48:30.544"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:29.948" endtime="20221118 11:48:30.545"/>
+</kw>
+<kw name="Valida Elemento" library="FrameworkAutomation">
+<arg>${LogoHome}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>Esta Visivel</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Esta Visivel" library="FrameworkAutomation">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221118 11:48:30.553" endtime="20221118 11:48:30.802"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:30.550" endtime="20221118 11:48:30.802"/>
+</kw>
+<msg timestamp="20221118 11:48:30.805" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20221118 11:48:30.548" endtime="20221118 11:48:30.806"/>
+</kw>
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:31.821" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:30.808" endtime="20221118 11:48:31.822"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:30.806" endtime="20221118 11:48:31.823"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}' == 'False'</arg>
+<arg>Fatal Error</arg>
+<arg>msg=O Elemento '${element}' não encontrado na tela</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221118 11:48:31.824" endtime="20221118 11:48:31.826"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:30.546" endtime="20221118 11:48:31.827"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:28.938" endtime="20221118 11:48:31.828"/>
+</kw>
+<kw name="Quando preencho Username &quot;Admin&quot; e password &quot;admin123&quot;" library="StepsAutomation" sourcename="Quando preencho Username &quot;${user}&quot; e password &quot;${senha}&quot;">
+<kw name="Preencher Text" library="FrameworkAutomation">
+<arg>${InputUser}</arg>
+<arg>${user}</arg>
+<kw name="Valida Elemento" library="FrameworkAutomation">
+<arg>${input}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>Esta Visivel</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Esta Visivel" library="FrameworkAutomation">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221118 11:48:31.842" endtime="20221118 11:48:32.027"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:31.840" endtime="20221118 11:48:32.027"/>
+</kw>
+<msg timestamp="20221118 11:48:32.028" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20221118 11:48:31.839" endtime="20221118 11:48:32.028"/>
+</kw>
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:33.037" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:32.030" endtime="20221118 11:48:33.038"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:32.028" endtime="20221118 11:48:33.038"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}' == 'False'</arg>
+<arg>Fatal Error</arg>
+<arg>msg=O Elemento '${element}' não encontrado na tela</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221118 11:48:33.040" endtime="20221118 11:48:33.041"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:31.837" endtime="20221118 11:48:33.042"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input}</arg>
+<arg>${item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221118 11:48:33.045" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
+<status status="PASS" starttime="20221118 11:48:33.043" endtime="20221118 11:48:33.441"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:31.834" endtime="20221118 11:48:33.442"/>
+</kw>
+<kw name="Preencher Text" library="FrameworkAutomation">
+<arg>${InputSenha}</arg>
+<arg>${senha}</arg>
+<kw name="Valida Elemento" library="FrameworkAutomation">
+<arg>${input}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>Esta Visivel</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Esta Visivel" library="FrameworkAutomation">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221118 11:48:33.452" endtime="20221118 11:48:33.544"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:33.450" endtime="20221118 11:48:33.545"/>
+</kw>
+<msg timestamp="20221118 11:48:33.545" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20221118 11:48:33.449" endtime="20221118 11:48:33.546"/>
+</kw>
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:34.557" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:33.548" endtime="20221118 11:48:34.558"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:33.546" endtime="20221118 11:48:34.559"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}' == 'False'</arg>
+<arg>Fatal Error</arg>
+<arg>msg=O Elemento '${element}' não encontrado na tela</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221118 11:48:34.560" endtime="20221118 11:48:34.562"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:33.446" endtime="20221118 11:48:34.562"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input}</arg>
+<arg>${item}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221118 11:48:34.566" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@name='password']'.</msg>
+<status status="PASS" starttime="20221118 11:48:34.563" endtime="20221118 11:48:35.017"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:33.444" endtime="20221118 11:48:35.018"/>
+</kw>
+<kw name="Print Tela" library="FrameworkAutomation">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221118 11:48:35.372" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221118 11:48:35.021" endtime="20221118 11:48:35.373"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:35.019" endtime="20221118 11:48:35.374"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:31.831" endtime="20221118 11:48:35.375"/>
+</kw>
+<kw name="Então clico em login e valido a pagina" library="StepsAutomation">
+<kw name="Click no Item" library="FrameworkAutomation">
+<arg>${BtnLogin}</arg>
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:36.394" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:35.384" endtime="20221118 11:48:36.395"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:35.381" endtime="20221118 11:48:36.396"/>
+</kw>
+<kw name="Valida Elemento" library="FrameworkAutomation">
+<arg>${item}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>Esta Visivel</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Esta Visivel" library="FrameworkAutomation">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221118 11:48:36.404" endtime="20221118 11:48:36.527"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:36.401" endtime="20221118 11:48:36.528"/>
+</kw>
+<msg timestamp="20221118 11:48:36.530" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20221118 11:48:36.399" endtime="20221118 11:48:36.530"/>
+</kw>
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:37.547" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:36.536" endtime="20221118 11:48:37.547"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:36.531" endtime="20221118 11:48:37.548"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}' == 'False'</arg>
+<arg>Fatal Error</arg>
+<arg>msg=O Elemento '${element}' não encontrado na tela</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221118 11:48:37.549" endtime="20221118 11:48:37.551"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:36.397" endtime="20221118 11:48:37.552"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${item}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221118 11:48:37.556" level="INFO">Clicking element 'xpath=//button[@type='submit'][contains(.,'Login')]'.</msg>
+<status status="PASS" starttime="20221118 11:48:37.553" endtime="20221118 11:48:37.862"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:35.379" endtime="20221118 11:48:37.864"/>
+</kw>
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:38.887" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:37.868" endtime="20221118 11:48:38.888"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:37.866" endtime="20221118 11:48:38.888"/>
+</kw>
+<kw name="Print Tela" library="FrameworkAutomation">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20221118 11:48:41.207" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221118 11:48:38.890" endtime="20221118 11:48:41.208"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:38.889" endtime="20221118 11:48:41.208"/>
+</kw>
+<kw name="Valida Elemento" library="FrameworkAutomation">
+<arg>${ValidLogin}</arg>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Status}</var>
+<arg>Esta Visivel</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Esta Visivel" library="FrameworkAutomation">
+<arg>${element}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221118 11:48:41.216" endtime="20221118 11:48:41.373"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:41.213" endtime="20221118 11:48:41.374"/>
+</kw>
+<msg timestamp="20221118 11:48:41.376" level="INFO">${Status} = True</msg>
+<status status="PASS" starttime="20221118 11:48:41.211" endtime="20221118 11:48:41.377"/>
+</kw>
+<kw name="Aguarda" library="FrameworkAutomation">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20221118 11:48:42.392" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20221118 11:48:41.380" endtime="20221118 11:48:42.393"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:41.377" endtime="20221118 11:48:42.394"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${status}' == 'False'</arg>
+<arg>Fatal Error</arg>
+<arg>msg=O Elemento '${element}' não encontrado na tela</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221118 11:48:42.394" endtime="20221118 11:48:42.397"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:41.209" endtime="20221118 11:48:42.398"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:35.378" endtime="20221118 11:48:42.399"/>
+</kw>
+<kw name="Stop Recording Test" library="AutoRecorder">
+<arg>CT01-Login Com Sucesso</arg>
+<doc>End of autorecording</doc>
+<msg timestamp="20221118 11:48:42.826" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20221118 11:48:42.411" endtime="20221118 11:48:42.826"/>
+</kw>
+<status status="PASS" starttime="20221118 11:48:12.966" endtime="20221118 11:48:42.408"/>
+</test>
+<doc>Essa suite testa o site</doc>
+<status status="PASS" starttime="20221118 11:48:07.311" endtime="20221118 11:48:42.836"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="SuiteAutomation">SuiteAutomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
